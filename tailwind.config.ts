@@ -13,6 +13,15 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        spinOnce: {
+          '0%': { transform: 'rotate(0deg) scale(0)' },
+          '100%': { transform: 'rotate(360deg) scale(1)' },
+        },
+      },
+      animation: {
+        'spin-once': 'spinOnce 0.4s ease-in-out',
+      },
     },
   },
   plugins: [require('daisyui'),],

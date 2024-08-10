@@ -4,6 +4,8 @@ import Header from "@/components/header/Header";
 import Hero from "@/components/homePage/Hero";
 import PopularDestination from "@/components/homePage/PopularDestination";
 import Advantages from "@/components/homePage/Advantages";
+import SpecialPackages from "@/components/homePage/SpecialPackages";
+import FrequentlyAsked from "@/components/homePage/FrequentlyAsked";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +17,8 @@ export default function Home() {
       <Hero/>
       <PopularDestination/>
       <Advantages/>
+      <SpecialPackages/>
+      <FrequentlyAsked/>
 
     </main>
   );

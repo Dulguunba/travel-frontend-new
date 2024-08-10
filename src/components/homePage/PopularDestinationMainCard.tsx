@@ -15,7 +15,7 @@ const PopularDestinationMainCard = ({picture, location, numberOfPackage}:  Popul
         <div className='flex gap-1'>
                 <LocationOnIcon className='text-sky-500 z-0'/>
                 <p className='text-white z-0'>{`${numberOfPackage}`} 
-                    packages</p> 
+                     packages</p> 
         </div>
 
         <div className='flex gap-4 justify-start'>

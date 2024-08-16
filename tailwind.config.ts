@@ -22,6 +22,11 @@ const config: Config = {
       animation: {
         'spin-once': 'spinOnce 0.4s ease-in-out',
       },
+      fontFamily: {
+        oswald: ["Oswald"],
+        primary: ["Roboto"],
+        openSans: ["Open Sans"]
+      },
     },
   },
   plugins: [require('daisyui'),],

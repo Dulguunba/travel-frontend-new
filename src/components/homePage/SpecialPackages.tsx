@@ -3,11 +3,11 @@ import React from 'react'
 
 const SpecialPackages = () => {
   return (
-    <div className='w-full flex justify-center my-10 '>
+    <div className='w-full flex justify-center my-32 '>
         <div className='flex w-[1200px] flex-col gap-4'>
             <div className='flex justify-between mb-10'>
                 <div className='flex flex-col gap-2 items-start'>
-                    <h1 className='font-bold text-3xl'>SPECIAL PACKAGES</h1>
+                    <h1 className='font-bold text-4xl'>SPECIAL PACKAGES</h1>
                     <p className='text-slate-500'>Get special travel packages made tailored your needs</p>
                 </div>
                 <Link href={"/"} className='text-sky-500 underline flex justify-end items-center'>See More Packages</Link>
@@ -34,7 +34,7 @@ const SpecialPackages = () => {
                         <h2 className='absolute top-4 right-4 text-white text-3xl font-semibold '>02</h2>
                     </div>
                     <div className='w-full h-1/3 flex items-end justify-start'>
-                        <h1 className='w-1/2 h-full font-bold text-5xl flex  items-center leading-normal'>EXCAPE TO PARADISE</h1>
+                        <h1 className='w-1/2 h-full font-bold text-4xl flex  items-center leading-normal'>EXCAPE TO <br/> PARADISE</h1>
                         <div className='w-1/2 h-full gap-5 flex flex-col items-start justify-center'>
                             <p className='text-slate-600 text-sm'>Bask in the warm tropical sun with our exclusive Tropical Escape Package. This 7-day trip takes you to the most stunning tropical islands.</p>
                             <button className='bg-sky-500 text-white text-sm rounded-md p-4'>BOOK NOW</button>

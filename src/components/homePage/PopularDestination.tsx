@@ -18,7 +18,7 @@ const PopularDestination = () => {
     }
 
   return (
-    <div className='w-[1200px] flex flex-col items-center justify-start py-16'>
+    <div className='w-[1200px] flex flex-col items-center justify-start py-32'>
         <h1 className='font-bold text-4xl py-4'>POPULAR DESTINATIONS</h1>
         <p className='text-gray-600 text-lg'>Explore our top destinations right from our  beloved clients' reviews</p>
         <div className='flex items-start justify-between gap-4 pt-16 w-full'>

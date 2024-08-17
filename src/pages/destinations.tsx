@@ -26,13 +26,13 @@ export default function Destinations() {
     const numberOfDestination = destinationData?.result?.length
 
     const filterDestinations = (destinations: DestinationItemType[], filter: string): DestinationItemType[] => {
-      if (filter === "All") return destinations;
+      if (filter === "All") {return destinations};
       return destinations.filter(destination => destination.destinationCategory.english === filter);
     };  
 
     useEffect(() => {
       if (destinationData?.result) {
-        const filteredData = filterDestinations(destinationData.result, destinationCategoryFilter);
+        const filteredData = filterDestinations(destinationData?.result, destinationCategoryFilter);
         setFilteredDestinations(filteredData);
       }
   }, [destinationCategoryFilter]);

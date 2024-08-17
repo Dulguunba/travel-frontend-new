@@ -1,6 +1,6 @@
 import React from 'react'
 import Searchtab from './Searchtab'
-import { DestinationCategories, DestinationCategoryItem, DestinationCategoryItemType } from '../utilities/DestinationTypes'
+import { DestinationCategoryItemType } from '../utilities/DestinationTypes'
 import FilterButton from './FilterButton';
 import ListFilter from './ListFilter';
 import GridFilter from './GridFilter';

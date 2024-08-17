@@ -2,8 +2,14 @@ import LocationOn from '@mui/icons-material/LocationOn'
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import React from 'react'
 import AttachMoney from '@mui/icons-material/AttachMoney';
+import { TourItemType } from '../utilities/TourType';
 
-const ListCard = () => {
+
+interface TourListProps {
+    tour?: TourItemType; 
+}
+
+const TourListCard = ({tour}: TourListProps) => {
   return (
     <div className='w-full h-40 flex gap-20 group'>
 
@@ -15,24 +21,24 @@ const ListCard = () => {
         <div className='w-1/2 h-full flex flex-col items-start justify-between gap-2 p-3 overflow-hidden'>
             <div className='text-sky-500 flex gap-3 tracking-wide uppercase'>
                 <LocationOn/>
-                <h2>Italy</h2>
+                <h2>{tour?.destination?.english}</h2>
             </div>
-            <h2 className='capitalize text-xl font-semibold'>Classic Italy Tour Package</h2>
-            <span className='text-sm'>A journey to visit Rome, Florence, and Venice, with guided tours of famous landmarks like the Colosseum, Vatican City, and the Leaning Tower of Pisa and activities like wine tasting and a ride.</span>
+            <h2 className='capitalize text-xl font-semibold'>{tour?.name}</h2>
+            <span className='text-sm h-14 overflow-hidden'>{tour?.additionalInfo}</span>
         </div>
 
         <div className='w-1/4 h-full flex flex-col items-start justify-between gap-2 p-3 text-sm'>
             <div className='flex flex-col gap-3'>
                 <div className='flex gap-2 items-center'>
                     <AccessTimeIcon className='text-base'/>
-                    <p>10</p>
+                    <p>{tour?.duration}</p>
                     <p>days</p>
                 </div>
 
                 <div className='flex gap-2 items-center'>
                     <AttachMoney className='text-base'/>
                     <p>Start from ₮</p>
-                    <p>1,200</p>
+                    <p>{tour?.price?.adultPrice?.toLocaleString()}</p>
                 </div>
             </div>
 
@@ -49,4 +55,4 @@ const ListCard = () => {
   )
 }
 
-export default ListCard
+export default TourListCard

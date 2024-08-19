@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Destinations() {
     const [destinationData, setDestinationData] = useState<DestinationsType | undefined>(undefined)
-    const [filteredDestinations, setFilteredDestinations] = useState<DestinationItemType[]>([])
+    const [filteredDestinations, setFilteredDestinations] = useState<DestinationItemType[] |  undefined>(destinationData?.result)
     const [categoryData, setCategoryData] = useState<DestinationCategories | undefined>(undefined)
     const [destinationCategoryFilter, setDestinationCategoryFilter] = useState('All')
     const [visualFilter, setVisualFilter] = useState(false)
@@ -27,7 +27,7 @@ export default function Destinations() {
 
     const filterDestinations = (destinations: DestinationItemType[], filter: string): DestinationItemType[] => {
       if (filter === "All") {return destinations};
-      return destinations.filter(destination => destination.destinationCategory.english === filter);
+      return destinations.filter(destination => destination.destinationCategory._id === filter);
     };  
 
     useEffect(() => {
@@ -35,9 +35,7 @@ export default function Destinations() {
         const filteredData = filterDestinations(destinationData?.result, destinationCategoryFilter);
         setFilteredDestinations(filteredData);
       }
-  }, [destinationCategoryFilter]);
-
-
+  }, [destinationCategoryFilter, destinationData]);
 
     return (
       <main

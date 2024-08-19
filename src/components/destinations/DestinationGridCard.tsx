@@ -2,6 +2,7 @@ import React from 'react'
 import { LocationOn } from '@mui/icons-material'
 import PushPinIcon from '@mui/icons-material/PushPin';
 import { DestinationItemType } from '../utilities/DestinationTypes';
+import Link from 'next/link';
 
 interface DestinationGridProps {
     destinationData?: DestinationItemType; 
@@ -46,7 +47,9 @@ const DestinationGridCard = ( {destinationData}: DestinationGridProps) => {
                     </div>
                 </div>
                 <p className=' text-center h-[70px] text-base overflow-hidden'>{destinationData?.additionalInfo}</p>
-                <button className='border border-white p-3 rounded-lg hover:bg-sky-500'>Learn More</button>
+                    <Link href={`/destination/${destinationData?._id}`}>
+                    <button className='border border-white p-3 rounded-lg hover:bg-sky-500' >Learn More</button>
+                </Link>
             </div>
 
         </div>

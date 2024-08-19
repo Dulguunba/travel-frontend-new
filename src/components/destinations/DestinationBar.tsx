@@ -25,14 +25,18 @@ const DestinationBar = ({ destinationCategories, destinationNumber, destinationC
             </div>
             <div className='flex justify-between'>
                 <div className='flex gap-2'>
-                    <FilterButton categoryName='All'setDestinationCategoryFilter={setDestinationCategoryFilter} destinationCategoryFilter={destinationCategoryFilter}/>
+                    <FilterButton filterName='All' filterId="All" setFilterProp={setDestinationCategoryFilter} filterProp={destinationCategoryFilter}/>
 
-                    {destinationCategories?.map((category)=> <FilterButton categoryName={category.english} setDestinationCategoryFilter={setDestinationCategoryFilter} destinationCategoryFilter={destinationCategoryFilter}/>)}
+                    {destinationCategories?.map((category)=> <FilterButton filterName={category.english} filterId={category._id} setFilterProp={setDestinationCategoryFilter} filterProp={destinationCategoryFilter}/>)}
 
                 </div>
                 <div className='flex gap-2'>
-                <GridFilter visualFilter={visualFilter} setVisualFilter={setVisualFilter}/>
-                    <ListFilter visualFilter={visualFilter} setVisualFilter={setVisualFilter}/>
+                <GridFilter 
+                    visualFilter={visualFilter} 
+                    setVisualFilter={setVisualFilter}/>
+                <ListFilter 
+                    visualFilter={visualFilter} 
+                    setVisualFilter={setVisualFilter}/>
 
                 </div>
 

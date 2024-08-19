@@ -27,7 +27,7 @@ const TourBar = ({ tourCategories, tourNumber, setTourCategoryFilter, tourCatego
             </div>
             <div className='flex justify-between'>
                 <div className='flex gap-2'>
-                    <FilterButton filterName='All' filterId='' setFilterProp={setTourCategoryFilter} filterProp={tourCategoryFilter}/>
+                    <FilterButton filterName='All' filterId='All' setFilterProp={setTourCategoryFilter} filterProp={tourCategoryFilter}/>
 
                     {tourCategories?.map((category)=> <FilterButton filterName={category.english} filterId={category._id} setFilterProp={setTourCategoryFilter} filterProp={tourCategoryFilter}/>)}
 

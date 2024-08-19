@@ -13,6 +13,20 @@ export interface DestinationsType {
     }]
 }
 
+export interface DestinationIdItemType {
+    result: {        
+        _id: string
+        name: string
+        english: string
+        destinationCategory: {
+            _id: string
+            name: string
+            english: string
+        }
+        additionalInfo: string
+        image: string}
+}
+
 export interface DestinationItemType {
 
         _id: string

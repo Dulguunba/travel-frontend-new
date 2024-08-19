@@ -29,3 +29,16 @@ export const getDestination = async (set: Function) => {
       return alert(`Уучлаарай алдаа үүслээ`);
     }
   };
+
+  export const getDestinationId = async (set: Function, destinationId: string |  undefined) => {
+    try {
+      console.log(destinationId, "id");
+      
+      const response = await instance.post("/destination/id", { destinationId });
+      console.log("response", response)
+      set(response?.data);
+      console.log("destination id data", response?.data);
+    } catch (error) {
+      return alert(`Уучлаарай алдаа үүслээ`);
+    }
+  };

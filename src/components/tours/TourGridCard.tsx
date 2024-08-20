@@ -2,6 +2,7 @@ import React from 'react'
 import { TourItemType } from '../utilities/TourType';
 import { LocationOn, Money } from '@mui/icons-material'
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import Link from 'next/link';
 
 interface TourGirdProps {
     tour?: TourItemType; 
@@ -11,7 +12,7 @@ interface TourGirdProps {
 const TourGridCard = ({tour}: TourGirdProps) => {
   return (
     <div className='w-full h-[300px] rounded-lg relative flex overflow-hidden group'>
-        <img className='absolute top-0 left-0 w-full h-full rounded-lg transform transition-transform duration-300 ease-in-out hover:scale-105' alt='travel package picture' src="/popularDestination2.jpg"/>
+        <img className='absolute top-0 left-0 w-full h-full rounded-lg transform transition-transform duration-300 ease-in-out hover:scale-105' alt='travel package picture' src={tour?.image?.mainImage} />
         <div className='bg-slate-800 opacity-20 absolute top-0 left-0 w-full h-full'></div>
         
         <div className='absolute top-0 left-0 w-full h-full flex flex-col justify-end gap-3 transform transition-transform duration-500 ease-in-out p-5 group-hover:translate-y-40 text-white z-0' >
@@ -50,7 +51,7 @@ const TourGridCard = ({tour}: TourGirdProps) => {
                     </div>
                 </div>
                 <p className=' text-center h-[70px] text-base overflow-hidden'>{tour?.additionalInfo}</p>
-                <button className='border border-white p-3 rounded-lg hover:bg-sky-500'>Learn More</button>
+                <Link href={`/tour/${tour?._id}`}><button className='border border-white p-3 rounded-lg hover:bg-sky-500'>Learn More</button></Link>
             </div>
 
         </div>

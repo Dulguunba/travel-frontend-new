@@ -8,6 +8,8 @@ interface DestinationDetailHeroProps {
 }
 
 const DestinationDetailHero = ({destinationDetailData}: DestinationDetailHeroProps) => {
+  const additionalInfoLength = Number(destinationDetailData?.additionalInfo?.length)/2
+
   return (
     <div className='w-full'>
         {/* <Header/> */}
@@ -17,13 +19,25 @@ const DestinationDetailHero = ({destinationDetailData}: DestinationDetailHeroPro
               <div className='w-full flex gap-10 text-xl justify-center font-semibold'>
                 <Link href="/">Home</Link>
                 <p>|</p>
-                <p>Destinations</p>
+                <Link href="/destinations">Destinations</Link>
                 <p>|</p>
-                <p>{destinationDetailData?.english}</p>
+                <p className='capitalize'>{destinationDetailData?.english}</p>
               </div>
               <h1 className=' text-8xl font-bold uppercase '>{destinationDetailData?.english}</h1>
             </div>
         </div>
+
+        <div className='w-full flex justify-center my-16'>
+            <div className='w-[1200px] grid grid-cols-2 gap-10 text-slate-500 text-sm'>
+                <div>{destinationDetailData?.additionalInfo?.slice(0,additionalInfoLength)}
+                </div>
+                <div>{destinationDetailData?.additionalInfo?.slice(additionalInfoLength)}
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
   )
 }

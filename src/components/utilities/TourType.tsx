@@ -51,6 +51,7 @@ export interface TourItemType {
     maxTourist: number;
   }
 
+
   export type CategoriesType={
     result: [
       { _id: string;

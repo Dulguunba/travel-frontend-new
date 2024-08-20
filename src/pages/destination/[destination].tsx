@@ -6,6 +6,9 @@ import { Inter } from "next/font/google";
 import { Roboto } from "next/font/google";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import DestinationDetailPopularTour from "@/components/destinations/DestinationDetailPopularTour";
+import { TourItemType, ToursType } from "@/components/utilities/TourType";
+import { getToursByDestination } from "@/components/functions/TourFetch";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,11 +23,15 @@ export default function DestinationHeroDetail () {
 
    const [destinationDetailData, setDestinationDetailData]= useState<DestinationIdItemType | undefined>(undefined)
 
+   const [toursByDestination, setToursByDestination]= useState<ToursType>()
+
    useEffect(() => {
       const fetchDestinationData = async () => {
         if (destinationId) {
             await getDestinationId(setDestinationDetailData, destinationId);
             console.log('destinationdata id', destinationDetailData);
+            await getToursByDestination(setToursByDestination, destinationId)
+            console.log('tourdata by destination id', toursByDestination);
         }
       };
       fetchDestinationData();
@@ -36,6 +43,7 @@ export default function DestinationHeroDetail () {
  >
    <Header/>
    <DestinationDetailHero destinationDetailData={destinationDetailData?.result}/>
+   <DestinationDetailPopularTour toursData={toursByDestination?.result}/>
 
 
  </main>
